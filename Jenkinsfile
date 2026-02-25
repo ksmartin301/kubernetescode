@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("khaleah_martin/test")
+       app = docker.build("ec2-user/test")
     }
 
     stage('Test image') {
@@ -32,4 +32,5 @@ node {
                 build job: 'updatemanifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
         }
 }
+
 
